@@ -1,6 +1,12 @@
 <script lang="ts">
   let visible = true;
   let audio_enable = true;
+
+  let participants = [
+    { name: "participant cat(2)", video: true },
+    { name: "participant cat(3)", video: true },
+    { name: "participant cat(4)", video: true },
+  ];
 </script>
 
 <div class="participants">
@@ -21,18 +27,15 @@
       />
     {/if}
   </div>
-  <div class="participant">
-    <span>participant cat(2)</span>
-    <img src="https://placekitten.com/320/240?image=2" alt="participant-2" />
-  </div>
-  <div class="participant">
-    <span>participant cat(3)</span>
-    <img src="https://placekitten.com/320/240?image=3" alt="participant-3" />
-  </div>
-  <div class="participant">
-    <span>participant cat(4)</span>
-    <img src="https://placekitten.com/320/240?image=4" alt="participant-4" />
-  </div>
+  {#each participants as participant, index}
+    <div class="participant">
+      <span>{participant.name}</span>
+      <img
+        src="https://placekitten.com/320/240?image={index + 2}"
+        alt="participant-{index + 2}"
+      />
+    </div>
+  {/each}
 </div>
 
 <div class="list-of-participants">
