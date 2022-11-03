@@ -7,8 +7,8 @@
 <div class="participant">
   <span>{name}</span>
   <img
-    src="https://placekitten.com/320/240?image={catType}"
-    alt="participant-{catType}"
+    src="https://placekitten.com/320/240?image={catType + 2}"
+    alt="participant-{catType + 2}"
   />
 </div>
 
