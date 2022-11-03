@@ -4,8 +4,25 @@
   let visible = true;
   let audio_enable = true;
 
-  let participantNames = ["Member cat(2)", "Member cat(3)", "Member cat(4)"];
+  $: participantNames = ["Member cat(2)", "Member cat(3)", "Member cat(4)"];
+
+  let nextParticipant: string;
+  setInterval(() => {
+    nextParticipant = `participant cat(${participantNames.length + 2})`;
+  }, 5 * 1000);
+  const handleApprove = () => {
+    // Svelte's reactivity is triggered by assignment.
+    participantNames = [...participantNames, nextParticipant];
+    nextParticipant = undefined;
+  };
 </script>
+
+{#if nextParticipant}
+  <div id="popup">
+    Waiting "{nextParticipant}"
+    <button on:click={handleApprove}>Approve</button>
+  </div>
+{/if}
 
 <div class="participants">
   <div class="participant p1">
