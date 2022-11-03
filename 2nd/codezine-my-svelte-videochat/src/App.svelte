@@ -1,11 +1,13 @@
 <script lang="ts">
+  import Participant from "./Participant.svelte";
+
   let visible = true;
   let audio_enable = true;
 
   let participants = [
-    { name: "participant cat(2)", video: true },
-    { name: "participant cat(3)", video: true },
-    { name: "participant cat(4)", video: true },
+    { name: "Member cat(2)", video: true },
+    { name: "Member cat(3)", video: true },
+    { name: "Member cat(4)", video: true },
   ];
 </script>
 
@@ -28,13 +30,7 @@
     {/if}
   </div>
   {#each participants as participant, index}
-    <div class="participant">
-      <span>{participant.name}</span>
-      <img
-        src="https://placekitten.com/320/240?image={index + 2}"
-        alt="participant-{index + 2}"
-      />
-    </div>
+    <Participant name={participant.name} catType={index} />
   {/each}
 </div>
 
@@ -58,21 +54,6 @@
   .participants {
     display: flex;
     flex-flow: row wrap;
-  }
-  .participant {
-    position: relative;
-    width: 320px;
-    height: 240px;
-    border: 1px solid black;
-    margin: 2px;
-    background-color: black;
-  }
-  .participant span {
-    background-color: black;
-    color: white;
-    padding: 0 0.5rem;
-    position: absolute;
-    top: 0;
   }
   .list-of-participants {
     clear: both;
