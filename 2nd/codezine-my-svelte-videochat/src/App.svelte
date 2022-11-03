@@ -37,9 +37,9 @@
 <div class="list-of-participants">
   <ul>
     <li>participant(1) (you)</li>
-    <li>participant(2)</li>
-    <li>participant(3)</li>
-    <li>participant(4)</li>
+    {#each participants as participant}
+      <li>{participant.name}</li>
+    {/each}
   </ul>
 </div>
 
@@ -54,6 +54,21 @@
   .participants {
     display: flex;
     flex-flow: row wrap;
+  }
+  .participant {
+    position: relative;
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    margin: 2px;
+    background-color: black;
+  }
+  .participant span {
+    background-color: black;
+    color: white;
+    padding: 0 0.5rem;
+    position: absolute;
+    top: 0;
   }
   .list-of-participants {
     clear: both;
