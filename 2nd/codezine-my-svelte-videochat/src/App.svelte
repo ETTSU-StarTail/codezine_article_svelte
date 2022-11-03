@@ -8,7 +8,7 @@
 
   let nextParticipant: string;
   setInterval(() => {
-    nextParticipant = `participant cat(${participantNames.length + 2})`;
+    nextParticipant = `Member cat(${participantNames.length + 2})`;
   }, 5 * 1000);
   const handleApprove = () => {
     // Svelte's reactivity is triggered by assignment.
