@@ -1,15 +1,23 @@
 <script lang="ts">
   export let name: string;
   export let catType: number;
-  let video: boolean;
+  let video: boolean = true;
 </script>
 
 <div class="participant">
-  <span>{name}</span>
-  <img
-    src="https://placekitten.com/320/240?image={catType + 2}"
-    alt="participant-{catType + 2}"
-  />
+  <span on:click={() => (video = !video)}>{name}</span>
+
+  {#if video}
+    <img
+      src="https://placekitten.com/320/240?image={catType + 2}"
+      alt="participant-{catType + 2}"
+    />
+  {:else}
+    <img
+      src="https://via.placeholder.com/320x240/000000/FFFFFF/?text=Video%20OFF"
+      alt="participant-{catType + 2}-video-off"
+    />
+  {/if}
 </div>
 
 <style>
