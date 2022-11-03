@@ -4,11 +4,7 @@
   let visible = true;
   let audio_enable = true;
 
-  let participants = [
-    { name: "Member cat(2)", video: true },
-    { name: "Member cat(3)", video: true },
-    { name: "Member cat(4)", video: true },
-  ];
+  let participantNames = ["Member cat(2)", "Member cat(3)", "Member cat(4)"];
 </script>
 
 <div class="participants">
@@ -29,16 +25,16 @@
       />
     {/if}
   </div>
-  {#each participants as participant, index}
-    <Participant name={participant.name} catType={index} />
+  {#each participantNames as name, index}
+    <Participant {name} catType={index} />
   {/each}
 </div>
 
 <div class="list-of-participants">
   <ul>
     <li>participant(1) (you)</li>
-    {#each participants as participant}
-      <li>{participant.name}</li>
+    {#each participantNames as name}
+      <li>{name}</li>
     {/each}
   </ul>
 </div>
