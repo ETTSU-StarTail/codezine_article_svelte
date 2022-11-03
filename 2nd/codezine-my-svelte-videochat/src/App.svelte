@@ -1,30 +1,59 @@
-<script lang="ts">
-	export let name: string;
-</script>
+<div class="participants">
+  <div class="participant p1">
+    <span>participant cat(1) (you)</span>
+    <img src="https://placekitten.com/320/240?image=1" alt="participant-1" />
+  </div>
+  <div class="participant">
+    <span>participant cat(2)</span>
+    <img src="https://placekitten.com/320/240?image=2" alt="participant-2" />
+  </div>
+  <div class="participant">
+    <span>participant cat(3)</span>
+    <img src="https://placekitten.com/320/240?image=3" alt="participant-3" />
+  </div>
+  <div class="participant">
+    <span>participant cat(4)</span>
+    <img src="https://placekitten.com/320/240?image=4" alt="participant-4" />
+  </div>
+</div>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<div class="list-of-participants">
+  <ul>
+    <li>participant(1) (you)</li>
+    <li>participant(2)</li>
+    <li>participant(3)</li>
+    <li>participant(4)</li>
+  </ul>
+</div>
+
+<div class="control">
+  <button>Leave</button>
+  <button>Audio ON/OFF</button>
+  <button>Video ON/OFF</button>
+  <button>Share screen</button>
+</div>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  .participants {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .participant {
+    position: relative;
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    margin: 2px;
+    background-color: black;
+  }
+  .participant span {
+    background-color: black;
+    color: white;
+    padding: 0 0.5rem;
+    position: absolute;
+    top: 0;
+  }
+  .list-of-participants {
+    clear: both;
+  }
 </style>
