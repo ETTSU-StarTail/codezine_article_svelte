@@ -1,11 +1,15 @@
 <script lang="ts">
   export let name: string;
+  export let catType: number;
   let video: boolean;
 </script>
 
 <div class="participant">
   <span>{name}</span>
-  <img src="https://placekitten.com/320/240?image=1" alt="participant-1" />
+  <img
+    src="https://placekitten.com/320/240?image={catType}"
+    alt="participant-{catType}"
+  />
 </div>
 
 <style>
