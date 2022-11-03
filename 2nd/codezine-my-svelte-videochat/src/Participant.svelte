@@ -1,9 +1,10 @@
 <script lang="ts">
-  export let participant: { name: string; video: boolean };
+  export let name: string;
+  let video: boolean;
 </script>
 
 <div class="participant">
-  <span>{participant.name}</span>
+  <span>{name}</span>
   <img src="https://placekitten.com/320/240?image=1" alt="participant-1" />
 </div>
 
