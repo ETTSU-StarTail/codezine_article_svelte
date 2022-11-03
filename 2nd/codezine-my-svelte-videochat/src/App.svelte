@@ -1,7 +1,18 @@
+<script lang="ts">
+  let visible = true;
+</script>
+
 <div class="participants">
   <div class="participant p1">
     <span>participant cat(1) (you)</span>
-    <img src="https://placekitten.com/320/240?image=1" alt="participant-1" />
+    {#if visible}
+      <img src="https://placekitten.com/320/240?image=1" alt="participant-1" />
+    {:else}
+      <img
+        src="https://via.placeholder.com/320x240/000000/FFFFFF/?text=Video%20OFF"
+        alt="participant-1-video-off"
+      />
+    {/if}
   </div>
   <div class="participant">
     <span>participant cat(2)</span>
@@ -29,7 +40,7 @@
 <div class="control">
   <button>Leave</button>
   <button>Audio ON/OFF</button>
-  <button>Video ON/OFF</button>
+  <button on:click={() => (visible = !visible)}>Video ON/OFF</button>
   <button>Share screen</button>
 </div>
 
