@@ -1,10 +1,17 @@
 <script lang="ts">
   let visible = true;
+  let audio_enable = true;
 </script>
 
 <div class="participants">
   <div class="participant p1">
-    <span>participant cat(1) (you)</span>
+    <span
+      >participant cat(1) (you) {#if audio_enable}
+        🔊
+      {:else}
+        🔇
+      {/if}</span
+    >
     {#if visible}
       <img src="https://placekitten.com/320/240?image=1" alt="participant-1" />
     {:else}
@@ -39,7 +46,7 @@
 
 <div class="control">
   <button>Leave</button>
-  <button>Audio ON/OFF</button>
+  <button on:click={() => (audio_enable = !audio_enable)}>Audio ON/OFF</button>
   <button on:click={() => (visible = !visible)}>Video ON/OFF</button>
   <button>Share screen</button>
 </div>
