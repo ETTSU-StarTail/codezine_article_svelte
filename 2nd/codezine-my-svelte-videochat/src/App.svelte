@@ -15,6 +15,8 @@
     participantNames = [...participantNames, nextParticipant];
     nextParticipant = undefined;
   };
+
+  $: numParticipants = participantNames.length + 1;
 </script>
 
 {#if nextParticipant}
@@ -46,6 +48,8 @@
     <Participant {name} catType={index} />
   {/each}
 </div>
+
+<div>participants: {numParticipants}</div>
 
 <div class="list-of-participants">
   <ul>
