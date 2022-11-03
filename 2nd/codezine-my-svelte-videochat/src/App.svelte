@@ -4,7 +4,7 @@
   let visible = true;
   let audio_enable = true;
 
-  $: participantNames = ["Member cat(2)", "Member cat(3)", "Member cat(4)"];
+  let participantNames = ["Member cat(2)", "Member cat(3)", "Member cat(4)"];
 
   let nextParticipant: string;
   setInterval(() => {
